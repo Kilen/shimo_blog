@@ -5,7 +5,9 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
+    page = params[:page] || 0
+    page_size = params[:page_size] || 30
+    @articles = Article.includes(:author).page(page).per(page_size)
   end
 
   # GET /articles/1
@@ -26,6 +28,7 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(article_params)
+    @article.author_id = current_user.id
 
     respond_to do |format|
       if @article.save

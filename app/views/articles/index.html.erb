@@ -15,7 +15,7 @@
       <tr>
         <td><%= article.title %></td>
         <td><%= raw(article.content) %></td>
-        <td><%= article.author_id %></td>
+        <td><%= article.author.try(:email) %></td>
         <% if user_signed_in? %>
           <td><%= link_to 'Show', article %></td>
           <td><%= link_to 'Edit', edit_article_path(article) %></td>
@@ -25,6 +25,7 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @articles %>
 
 <br>
 

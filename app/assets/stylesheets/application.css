@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+p, ol, ul {
+  font-family: Georgia, serif;
+  line-height: 24px;
+}

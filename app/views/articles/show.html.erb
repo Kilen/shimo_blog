@@ -10,9 +10,11 @@
       <%= @article.author.try(:email) %>
     </p>
 
-    <p>
-      <%= raw(@article.content) %>
-    </p>
+    <div class="articles-flow">
+      <p>
+        <%= raw(@article.content) %>
+      </p>
+    </div>
 
   </div>
 </div>

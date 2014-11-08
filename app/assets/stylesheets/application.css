@@ -18,3 +18,9 @@ p, ol, ul {
   font-family: Georgia, serif;
   line-height: 24px;
 }
+
+.divider {
+  border-bottom: 1px solid #ddd;
+  padding-top: 15px;
+}
+
